@@ -6,7 +6,7 @@ pipeline {
         echo 'Build in process'
       }
     }
-    stage('Test firefox') {
+    stage('Test') {
       parallel {
         stage('Test firefox') {
           steps {
@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Test Chrome') {
           steps {
-            sh 'echo \'testing Chrome\''
+            sh 'echo \'testing Chrome\'' ; exit 1'
           }
         }
         stage('Test edge') {
